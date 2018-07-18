@@ -1,0 +1,12 @@
+<div class="row">
+<div class="col-md-5">
+  <app-recipe-list (recipeItemEmitter) = 'selectRecipe = $event'></app-recipe-list>
+</div>
+<div class="col-md-7">
+  <app-recipe-detail *ngIf='selectRecipe; else textRecipe' [recipe]="selectRecipe">  </app-recipe-detail>
+
+    <ng-template #textRecipe>
+      <p>Please Select Recipe</p>
+    </ng-template>
+</div>
+</div>
